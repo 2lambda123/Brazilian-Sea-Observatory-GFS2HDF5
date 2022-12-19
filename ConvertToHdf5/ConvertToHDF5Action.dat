@@ -1,0 +1,106 @@
+
+<begin_file>
+ 
+ACTION : CONVERT NETCDF CF TO HDF5 MOHID
+HDF5_OUT : 1
+OUTPUTFILENAME : gfs.hdf5
+NETCDF_OUT : 0
+
+<<begin_time>>
+NETCDF_NAME : time
+<<end_time>>
+ 
+<<begin_grid>>
+NETCDF_NAME_LAT : latitude
+NETCDF_NAME_LONG : longitude
+MAPPING_LIMIT : -1000
+<<end_grid>>
+
+PROPERTIES_NUMBER : 10
+
+<<begin_field>>
+NETCDF_NAME : TMP_2maboveground
+NAME : air temperature
+UNITS : 0C
+DIM : 2
+ADD_FACTOR : -273.15
+<<end_field>>
+
+<<begin_field>>
+NETCDF_NAME : UGRD_10maboveground
+NAME : wind velocity X
+UNITS : m/s
+DIM : 2
+<<end_field>>
+
+<<begin_field>>
+NETCDF_NAME : VGRD_10maboveground
+NAME : wind velocity Y
+UNITS : m/s
+DIM : 2
+<<end_field>>
+
+<<begin_field>>
+NETCDF_NAME : RH_2maboveground
+NAME : relative humidity
+UNITS : fraction
+DIM : 2
+MULTIPLY_FACTOR : 0.01
+<<end_field>>
+
+<<begin_field>>
+NETCDF_NAME : PRMSL_meansealevel
+NAME : atmospheric pressure
+UNITS : Pa
+DIM : 2
+<<end_field>>
+
+<<begin_field>>
+!NETCDF_NAME : TCDC_entireatmosphere_consideredasasinglelayer_
+NETCDF_NAME : TCDC_entireatmosphere
+NAME : cloud cover
+UNITS : fraction
+DIM : 2
+MULTIPLY_FACTOR : 0.01
+<<end_field>>
+
+<<begin_field>>
+NETCDF_NAME : DLWRF_surface
+NAME : downward long wave radiation
+UNITS : W/m2
+DIM : 2
+<<end_field>>
+
+<<begin_field>>
+NETCDF_NAME : DSWRF_surface
+NAME : solar radiation
+UNITS : w/m2
+DIM : 2
+<<end_field>>
+
+<<begin_field>>
+NETCDF_NAME : APCP_surface
+NAME : precipitation
+UNITS : mm
+DIM : 2
+<<end_field>>
+
+<<begin_field>>
+NETCDF_NAME : HPBL_surface
+NAME : pbl height
+UNITS : m
+DIM : 2
+<<end_field>>
+
+<<begin_field>>
+NETCDF_NAME : ALBDO_surface
+NAME : albedo
+UNITS : fraction
+DIM : 2
+MULTIPLY_FACTOR : 0.01
+<<end_field>>
+
+<<begin_input_files>>
+gfs.nc
+<<end_input_files>>
+<end_file>
