@@ -80,11 +80,11 @@ initial_date = datetime.datetime.combine(datetime.datetime.today(), datetime.tim
 #Download
 if download == 1:
         
-        download_dir = download_dir+"/"+str(initial_date.strftime("%Y%m%d"))
-        if not os.path.exists(download_dir):
-            os.makedirs(download_dir)
+        download_dir_date = download_dir+"/"+str(initial_date.strftime("%Y%m%d"))
+        if not os.path.exists(download_dir_date):
+            os.makedirs(download_dir_date)
                         
-        os.chdir(download_dir)
+        os.chdir(download_dir_date)
                 
         number_of_downloads = number_of_runs * 24 + 2
         
