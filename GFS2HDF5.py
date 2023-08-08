@@ -204,9 +204,10 @@ if ConvertToHdf5 == 1:
                         telegram_msg(msg)    
 
 if remove_old_files == 1:
-        for file in glob.glob(download_dir+'/*.grib2*'):  ## lista todos arquivos  .grib2
+        for file in glob.glob(download_dir+'/*/'): 
                 file_age = os.path.getctime(os.path.join(download_dir,file))
                 if (time.time() - file_age) // 86400 >= days_to_remove:
-                        os.remove(file)
+                        #os.remove(file)
+                        shutil.rmtree(file)
                         print('{} removed'.format(file))
         
